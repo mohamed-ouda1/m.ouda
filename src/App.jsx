@@ -1,0 +1,25 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Certifications from './components/Certifications';
+import Contact from './components/Contact';
+
+function App() {
+  return (
+    <>
+      <div className="bg-glow"></div>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Certifications />
+        <Contact />
+      </main>
+    </>
+  );
+}
+
+export default App;
