@@ -31,7 +31,6 @@ const Navbar = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        flexWrap: 'wrap',
         gap: '1rem'
       }}>
         <motion.div 
@@ -43,8 +42,8 @@ const Navbar = () => {
           {lang === 'ar' ? 'محمد عودة' : 'M. Ouda'}
         </motion.div>
 
-        {/* Desktop Nav */}
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
+        {/* Desktop Nav Links */}
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="nav-links">
           {navLinks.map((link, index) => (
             <motion.a 
               key={index}
@@ -64,27 +63,22 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          
-          <button 
-            onClick={toggleLanguage} 
-            className="btn btn-secondary" 
-            style={{ padding: '6px 12px', fontSize: '0.9rem', gap: '6px' }}
-          >
-            <Globe size={16} /> 
-            {lang === 'ar' ? 'English' : 'عربي'}
-          </button>
         </div>
+          
+        <button 
+          onClick={toggleLanguage} 
+          className="btn btn-secondary language-btn" 
+          style={{ padding: '6px 12px', fontSize: '0.9rem', gap: '6px' }}
+        >
+          <Globe size={16} /> 
+          {lang === 'ar' ? 'English' : 'عربي'}
+        </button>
 
       </div>
       <style>{`
         @media (max-width: 768px) {
-          .nav-container {
-            justify-content: center !important;
-          }
-          .desktop-nav { 
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 1rem !important;
+          .nav-links { 
+            display: none !important;
           }
         }
       `}</style>
